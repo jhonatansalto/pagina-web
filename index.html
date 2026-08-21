@@ -40,6 +40,21 @@ canvas#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
 }
 @keyframes linesDrift{to{transform:translateY(80px)}}
 .hero-inner{position:relative;z-index:2;max-width:1000px}
+
+/* ESTILOS DEL LOGO PRINCIPAL */
+.hero-logo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--amber);
+  margin-bottom: 24px;
+  box-shadow: 0 0 30px rgba(240,146,10,0.25);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease forwards;
+}
+
 .hero-tag{
   display:inline-block;
   font-family:'Barlow Condensed',sans-serif;
@@ -47,7 +62,7 @@ canvas#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
   color:var(--amber);border:1px solid rgba(240,146,10,0.4);
   padding:8px 24px;margin-bottom:36px;
   opacity:0;transform:translateY(20px);
-  animation: slideUp 0.6s ease forwards;
+  animation: slideUp 0.6s ease 0.2s forwards;
 }
 @keyframes slideUp { to { opacity:1; transform:none; } }
 
@@ -353,11 +368,13 @@ footer{
   flex-wrap:wrap;gap:16px;
   border-top:1px solid rgba(240,146,10,.1);
 }
-.footer-logo{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:1.6rem;letter-spacing:3px;color:var(--white);
+.footer-logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid rgba(240,146,10,0.5);
 }
-.footer-logo span{color:var(--amber)}
 .footer-text {
   text-align: center;
 }
@@ -374,7 +391,7 @@ footer{
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.footer-links{display:flex;gap:24px}
+.footer-links{display:flex;gap:24px; align-items:center;}
 .footer-links a{
   font-size:11px;letter-spacing:2px;text-transform:uppercase;
   color:var(--dim);text-decoration:none;
@@ -445,7 +462,7 @@ footer{
   #enquiryForm{padding:0 4px}
   .cg-item{padding:22px 20px}
   footer{flex-direction:column;text-align:center;gap:14px}
-  .footer-links{flex-wrap:wrap;justify-content:center}
+  .footer-links{flex-wrap:wrap;justify-content:center;margin-top:10px;}
 }
 
 @media(max-width:480px){
@@ -464,6 +481,11 @@ footer{
 <div class="panel" id="hero">
   <div class="hero-bg-lines"></div>
   <div class="hero-inner">
+    
+    <!-- LOGO AGREGADO AQUÍ -->
+    <img src="logo.jpg" alt="Logo Herrería Valan" class="hero-logo">
+    
+    <br>
     <div class="hero-tag">Salto, Uruguay · Herrería, Portones y Automatismos</div>
     <div class="hero-title">
       <span class="word">HERRERÍA</span>
@@ -633,7 +655,8 @@ footer{
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    HERRERÍA <span>VALAN</span>
+    <!-- LOGO EN EL FOOTER -->
+    <img src="logo.jpg" alt="Logo Herrería Valan" class="footer-logo-img">
   </div>
   
   <div class="footer-text">
