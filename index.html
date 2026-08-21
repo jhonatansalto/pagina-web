@@ -109,7 +109,7 @@ canvas#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
 .btn-fill{background:linear-gradient(135deg,var(--amber),var(--orange));color:#fff}
 .btn-line{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.3)}
 
-/* SCROLLING TICKER */
+/* SCROLLING TICKER (LETRAS) */
 .ticker-wrap{
   position:relative;z-index:2;
   background:var(--amber);
@@ -129,6 +129,40 @@ canvas#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
 }
 .ticker-item::after{content:'✦';padding-left:40px;opacity:.4}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TICKER IMAGENES (NUEVO CARRUSEL FOTOS) */
+.ticker-img-wrap {
+  position: relative;
+  z-index: 2;
+  background: var(--deep);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 15px 0 30px 0; 
+  display: flex;
+}
+.ticker-img {
+  display: inline-flex;
+  gap: 15px;
+  padding-left: 15px;
+  animation: tickerReverse 50s linear infinite; 
+}
+@keyframes tickerReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.ticker-img img {
+  height: 240px;
+  width: 320px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+  filter: grayscale(30%); 
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+.ticker-img img:hover {
+  filter: grayscale(0%); 
+}
 
 /* ABOUT / CINEMATIC SPLIT */
 #about{
@@ -463,6 +497,8 @@ footer{
   .cg-item{padding:22px 20px}
   footer{flex-direction:column;text-align:center;gap:14px}
   .footer-links{flex-wrap:wrap;justify-content:center;margin-top:10px;}
+  /* Ajuste de imágenes para móvil */
+  .ticker-img img { height: 160px; width: 220px; }
 }
 
 @media(max-width:480px){
@@ -500,7 +536,7 @@ footer{
   </div>
 </div>
 
-<!-- TICKER -->
+<!-- TICKER DE TEXTO -->
 <div class="ticker-wrap">
   <div class="ticker">
     <span class="ticker-item">Portones Corredizos y basculantes</span>
@@ -518,6 +554,35 @@ footer{
     <span class="ticker-item">Rejas de Seguridad</span>
     <span class="ticker-item">Estructuras Metálicas</span>
     <span class="ticker-item">Techos y estructuras de hierro</span>
+  </div>
+</div>
+
+<!-- TICKER DE IMÁGENES (NUEVO CARRUSEL CON TUS 10 FOTOS) -->
+<div class="ticker-img-wrap">
+  <div class="ticker-img">
+    <!-- Grupo de imágenes 1 -->
+    <img src="camioneta.jpg" alt="Trabajo en camioneta">
+    <img src="camioneta2.jpg" alt="Trabajo de herrería en camioneta">
+    <img src="cerramiento.jpg" alt="Cerramiento metálico">
+    <img src="estanteria.jpg" alt="Estantería metálica">
+    <img src="estanteria2.jpg" alt="Estantería de hierro">
+    <img src="parrillero.jpg" alt="Herrería para parrillero">
+    <img src="porton.jpg" alt="Portón metálico">
+    <img src="porton4.jpg" alt="Automatismo de portón">
+    <img src="rejas.jpg" alt="Rejas de seguridad">
+    <img src="segundopiso.jpg" alt="Estructura metálica de segundo piso">
+    
+    <!-- Grupo de imágenes 2 (Duplicadas estrictamente para que el giro sea infinito sin cortes) -->
+    <img src="camioneta.jpg" alt="Trabajo en camioneta">
+    <img src="camioneta2.jpg" alt="Trabajo de herrería en camioneta">
+    <img src="cerramiento.jpg" alt="Cerramiento metálico">
+    <img src="estanteria.jpg" alt="Estantería metálica">
+    <img src="estanteria2.jpg" alt="Estantería de hierro">
+    <img src="parrillero.jpg" alt="Herrería para parrillero">
+    <img src="porton.jpg" alt="Portón metálico">
+    <img src="porton4.jpg" alt="Automatismo de portón">
+    <img src="rejas.jpg" alt="Rejas de seguridad">
+    <img src="segundopiso.jpg" alt="Estructura metálica de segundo piso">
   </div>
 </div>
 
